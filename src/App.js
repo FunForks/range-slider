@@ -12,6 +12,7 @@ function App() {
     <SliderProvider>
       <Header />
       <Slider />
+      <br />
       <a
         href="https://github.com/FunForks/range-slider"
       >

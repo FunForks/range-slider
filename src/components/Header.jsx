@@ -8,7 +8,7 @@ import { SliderContext } from "../contexts/SliderContext"
 
 
 export const Header = () => {
-  const { ends, value } = useContext(SliderContext)
+  const { value } = useContext(SliderContext)
 
   return (
     <h1
