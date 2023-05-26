@@ -8,12 +8,12 @@ import { SliderContext } from "../contexts/SliderContext"
 
 
 export const Header = () => {
-  const { value } = useContext(SliderContext)
+  const { ends, value } = useContext(SliderContext)
 
   return (
     <h1
       style={{
-        width: "360px"
+        width: "420px"
       }}
     >
       React Slider value: {value}

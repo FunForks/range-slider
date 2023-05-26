@@ -12,10 +12,24 @@ export const SliderContext = createContext()
 
 
 export const SliderProvider = ({ children }) => {
+  const getValue = ends => `${ends[0]} - ${ends[1]}`
+
   // setMaxValue is not shared in this demo, because there is
   // no need to change maxValue.
   const [ maxValue, setMaxValue ] = useState(100)
-  const [ value, setValue ] = useState(50)
+  const [ ends, setEnds ] = useState([20, 80])
+  const [ value, setValue ] = useState(() => getValue(ends))
+
+
+
+
+  const setEnd = (value, end) => {
+    const next = end
+               ? [ ends[0], value ]
+               : [ value, ends[1]]
+    setEnds(next)
+    setValue(getValue(next))
+  }
 
 
   return (
@@ -23,7 +37,8 @@ export const SliderProvider = ({ children }) => {
       value = {{
         maxValue,
         value,
-        setValue
+        ends,
+        setEnd
       }}
     >
       {children}

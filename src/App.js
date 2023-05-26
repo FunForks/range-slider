@@ -12,9 +12,8 @@ function App() {
     <SliderProvider>
       <Header />
       <Slider />
-      <hr />
       <a
-        href="https://github.com/FunForks/react-slider"
+        href="https://github.com/FunForks/range-slider"
       >
         GitHub Repository
       </a>
