@@ -40,5 +40,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://funforks.github.io/react-slider"
+  "homepage": "https://funforks.github.io/range-slider"
 }
