@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/range-slider/static/css/main.aa37a0a1.css",
+    "main.js": "/range-slider/static/js/main.67c6ff6d.js",
+    "index.html": "/range-slider/index.html",
+    "main.aa37a0a1.css.map": "/range-slider/static/css/main.aa37a0a1.css.map",
+    "main.67c6ff6d.js.map": "/range-slider/static/js/main.67c6ff6d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa37a0a1.css",
+    "static/js/main.67c6ff6d.js"
+  ]
+}
