@@ -70,7 +70,7 @@ export const Slider = () => {
   const [ initialized, setInitialized ] = useState(false)
 
   const ref  = useRef()    // DOM element then maxX integer
-  const maxX = ref.current
+  const { size, maxX } = (ref.current || {})
   const pxs  = maxX
              ? ends.map( end => end * maxX / maxValue )
              : [0, 0]
@@ -84,11 +84,20 @@ export const Slider = () => {
     const offset = pxs[index] - pageX // constant in closure
     let closureValue = ends[index]    // can be updated in closure
 
+    const limits = index
+    ? { min: pxs[0] + size, max: maxX }
+    : { min: 0, max: pxs[1] - size }
+
     /**
      * drag() is triggered by mousemove events
      */
     const drag = ({ pageX }) => {
-      const left = Math.max(0, Math.min(pageX + offset, maxX))
+      const left = Math.max(
+        limits.min,
+        Math.min(
+          pageX + offset,
+          limits.max
+      ))
 
       // Calculate the current value
       const next = Math.round((left * maxValue / maxX))
@@ -125,7 +134,11 @@ export const Slider = () => {
     const height = slider.clientHeight // without border
 
     // Re-use ref to hold the maxX value of the slider thumb
-    ref.current = width - height
+    const maxX = width - height
+    ref.current = {
+      size: height,
+      maxX
+    }
 
     // Force a re-render so that thumbs will be placed
     setInitialized(true)

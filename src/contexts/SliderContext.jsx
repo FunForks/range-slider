@@ -17,7 +17,7 @@ export const SliderProvider = ({ children }) => {
   // setMaxValue is not shared in this demo, because there is
   // no need to change maxValue.
   const [ maxValue, setMaxValue ] = useState(100)
-  const [ ends, setEnds ] = useState([20, 80])
+  const [ ends, setEnds ] = useState([0, 50])
   const [ value, setValue ] = useState(() => getValue(ends))
 
 
